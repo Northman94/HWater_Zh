@@ -20,9 +20,6 @@ public class AudioManagerScript : MonoBehaviour
     private Toggle ToogleMusic;
 
 
-
-
-
     private void Awake()
     {
         if (instance == null)
@@ -35,7 +32,7 @@ public class AudioManagerScript : MonoBehaviour
             return; // To ensure no more code executed before we destroyed gameObj
         }
 
-        // Will prevent Music from restarting after Scene Load
+        // Should prevent Music from restarting after Scene Load
         DontDestroyOnLoad(gameObject); 
 
         foreach (SoundsStoringScript _item in allSounds)
@@ -65,7 +62,6 @@ public class AudioManagerScript : MonoBehaviour
         {
             ToogleMusic.isOn = true;
         }
-        
 
         PlayAudio("MainTheme");
     }
@@ -75,7 +71,6 @@ public class AudioManagerScript : MonoBehaviour
     {
         SoundsStoringScript startM = Array.Find(allSounds, sound => sound.name == _nameStart);
 
-      
 
         if (_nameStart == null)
         {

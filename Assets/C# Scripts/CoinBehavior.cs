@@ -16,7 +16,6 @@ public class CoinBehavior : MonoBehaviour
     }
 
 
-
     private void CoinDestruction(float _destroyTime)
     {
         Destroy(this.gameObject, _destroyTime);

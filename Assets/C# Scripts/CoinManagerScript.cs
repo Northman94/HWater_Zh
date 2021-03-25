@@ -83,6 +83,6 @@ public class CoinManagerScript : MonoBehaviour
         Instantiate (coinPrafab, new Vector3 (_destinationX, 8f, _destinationZ), Quaternion.Euler(90f, 0f, 0f) );
 
         // Destruction script should be separatelly attached to a prefab, so each Obj instance could delete
-        // itself without deleting MAIN PREFAB. Which can cause reference error.
+        // itself without deleting MAIN PREFAB. Which can cause NULL-Reference Error.
     }
 }

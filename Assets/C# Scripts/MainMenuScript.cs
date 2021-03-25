@@ -15,13 +15,8 @@ public class MainMenuScript : MonoBehaviour
     private GameObject mainMenuUI;
 
 
-
     private void Start()
     {
-        //Initialization NO!
-        //mainMenuUI = GameObject.Find("MainCanvas");
-        //loadingUI = GameObject.Find("LoadingUI");
-
         mainMenuUI.SetActive(true);
         loadingUI.SetActive(false);
     }
@@ -36,7 +31,6 @@ public class MainMenuScript : MonoBehaviour
     }
 
     
-
     //Loading progress bar
     IEnumerator LoadAsynchronously()
     {

@@ -9,18 +9,12 @@ public class LoadingFirstSceneScript : MonoBehaviour
     private GameObject firstSceneLoadingUI;
     [SerializeField]
     private Slider firstSceneLoadingSlider;
-
     [SerializeField]
     private GameObject secondSceneMenuUI;
 
 
-
     private void Start()
     {
-        //Initialization NO!
-        //mainMenuUI = GameObject.Find("MainCanvas");
-        //loadingUI = GameObject.Find("LoadingUI");
-
         secondSceneMenuUI.SetActive(true);
         firstSceneLoadingUI.SetActive(false);
     }
@@ -28,8 +22,6 @@ public class LoadingFirstSceneScript : MonoBehaviour
     public void MenuButton()
     {
         StartCoroutine(LoadAsynchronously());
-
-        //FindObjectOfType<AudioManagerScript>().PlaySound("MainTheme");
 
         FindObjectOfType<AudioManagerScript>().StopAudio("SecondSceneTheme");
         FindObjectOfType<AudioManagerScript>().BackToMenu();
@@ -47,7 +39,7 @@ public class LoadingFirstSceneScript : MonoBehaviour
 
         while (!loadingProgress.isDone)
         {
-            float progress = Mathf.Clamp01(loadingProgress.progress / 0.9f); //Asset loading 0-0.9f fix to 0-1
+            float progress = Mathf.Clamp01(loadingProgress.progress / 0.9f); //Asset loading from 0 to 0.9f fixed to 0-1
 
             firstSceneLoadingSlider.value = progress;
 
